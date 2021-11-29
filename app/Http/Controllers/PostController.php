@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Post;
 use Illuminate\Http\Request;
 use App\Http\Requests\StoreFormRequest;
+use App\Http\Requests\UpdateFormRequest;
 
 class PostController extends Controller
 {
@@ -42,12 +43,8 @@ class PostController extends Controller
         $post = new Post();
         $input = $request->validated();
         
-       
-        if($request->hasFile('img'))
-        {
-           
-            $input['img'] = $post->saveImage($request->file('img'));
-        }
+        $input['img'] = $post->saveImage($request->file('img'));
+        
 
        Post::create($input);
 
@@ -73,19 +70,35 @@ class PostController extends Controller
      */
     public function edit(Post $post)
     {
-        //
+        return view('post.edit',compact('post'));
     }
 
     /**
      * Update the specified resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
+     * @param  \Illuminate\Http\UpdateFormRequest  $request
      * @param  \App\Models\Post  $post
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Post $post)
+    public function update(UpdateFormRequest $request, Post $post)
     {
-        //
+       
+        $input = $request->validated();
+        
+        if($request->hasFile('img'))
+        {
+            $input['img'] = $post->saveImage($request->file('img'));
+        }
+        else
+        {
+            $input['img'] = $request->input('oldImage');
+        }
+        
+        $post->update($input);
+
+
+        return redirect()->route('posts.index');
+        
     }
 
     /**
@@ -96,6 +109,8 @@ class PostController extends Controller
      */
     public function destroy(Post $post)
     {
-        //
+        $post->delete();
+
+        return redirect()->route('posts.index');
     }
 }

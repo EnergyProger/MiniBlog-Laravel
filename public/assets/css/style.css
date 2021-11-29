@@ -225,8 +225,20 @@ table.table .avatar {
 .text-danger-message{
 	display: block;
 	color:red;
-	margin-bottom: 3px;
+	margin-top: -13px;
+	margin-bottom: 5px;
 }
 .pagination{
 	margin-top: -10px;
+}
+.imageForm{
+	display:block;
+	width:200px;
+}
+.deleteBtn{
+	border: none; 
+	background: transparent; 
+	float: right; 
+	margin-top: -28px;
+	color: rgb(201, 38, 38);
 }
