@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\PostController;
 
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -14,9 +15,11 @@ use App\Http\Controllers\PostController;
 |
 */
 
-Route::get('/', [PostController::class, 'index'])->name('home');
+Route::redirect('/','posts');
 
-Route::get('/post/create', [PostController::class, 'create'])->name('postCreate');
+Route::resource('posts',PostController::class);
 
-Route::get('/post/edit/{id}', [PostController::class, 'edit'])->name('postEdit');
+
+
+
 

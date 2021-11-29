@@ -17,7 +17,7 @@ class PostFactory extends Factory
         return [
             'title'=>$this->faker->sentence,
             'description'=>$this->faker->text,
-            'img'=>Str::random(20).'.jpg'
+            'img'=>$this->faker->image('public/assets/img_posts',1280,720,null,false)
         ];
     }
 }
