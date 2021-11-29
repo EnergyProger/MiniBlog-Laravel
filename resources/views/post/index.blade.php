@@ -40,7 +40,6 @@
 							@method('DELETE')
 							 <button type="submit" class="deleteBtn" onclick="return confirm('Delete this post?');"><i class="material-icons"  title="Delete">&#xE872;</i></button>
 							</form>
-			
 						</td>
 					</tr>
 					@endforeach
