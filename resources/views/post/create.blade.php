@@ -6,7 +6,7 @@
   @csrf
   <div class="form-group">
     <label for="title">Title</label>
-    <input type="text" class="form-control" id="title" aria-describedby="title" name="title" placeholder="Enter title...">
+    <input type="text" class="form-control" id="title" aria-describedby="title" name="title" value="{{old('title')}}" placeholder="Enter title...">
   </div>
   @error('title')
    <span class="text-danger-message">{{$message}}</span>
@@ -14,7 +14,7 @@
 
   <div class="form-group">
     <label for="description">Description</label>
-    <input type="text" class="form-control" id="description" name="description" placeholder="Enter description...">
+    <input type="text" class="form-control" id="description" name="description" value="{{old('description')}}" placeholder="Enter description...">
   </div>
   @error('description')
    <span class="text-danger-message">{{$message}}</span>
@@ -30,7 +30,7 @@
   @enderror
   
   
-  <button type="submit" class="btn btn-primary">Submit</button>
+  <button type="submit" class="btn btn-primary">Create</button>
 </form>
 </div>
 

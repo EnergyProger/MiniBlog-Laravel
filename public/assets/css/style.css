@@ -242,3 +242,32 @@ table.table .avatar {
 	margin-top: -28px;
 	color: rgb(201, 38, 38);
 }
+
+.showPage{
+	display: flex;
+	width: 1000px;
+	padding-top: 5%;
+	margin: 0 auto;
+	
+}
+.showPage__image{
+	width: 50%;
+}
+.showPage__content{
+	width: 50%;
+}
+.showPage__image img{
+	width: 100%;
+	border-radius: 5px;
+}
+
+.showPage__content h2{
+	margin-left: 30px;
+}
+.showPage__content p{
+	margin-left: 30px;
+}
+.showPage__content .text{
+	color: #000;
+	font-size: 16px;
+}

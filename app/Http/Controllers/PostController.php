@@ -17,7 +17,7 @@ class PostController extends Controller
     public function index()
     {
         
-        $posts = Post::paginate(5);
+        $posts = Post::orderBy('updated_at', 'DESC')->paginate(5);
 
         return view('post.index',compact('posts'));
     }
@@ -59,7 +59,7 @@ class PostController extends Controller
      */
     public function show(Post $post)
     {
-        //
+        return view('post.show', compact('post'));
     }
 
     /**
