@@ -222,6 +222,12 @@ table.table .avatar {
 .modal form label {
 	font-weight: normal;
 }
+.view i{
+	color: rgb(19, 42, 170);
+}
+.view i:hover{
+	color: rgb(7, 58, 226);
+}
 .text-danger-message{
 	display: block;
 	color:red;

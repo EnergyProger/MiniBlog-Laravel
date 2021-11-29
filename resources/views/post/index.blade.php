@@ -33,7 +33,7 @@
 						<td>{{$post->description}}</td>
 						<td>{{$post->updated_at}}</td>
 						<td>
-							<a href="{{route('posts.show',$post)}}"><i class="material-icons" title="View">&#xe8f4;</i></a>
+							<a href="{{route('posts.show',$post)}}" class="view"><i class="material-icons" title="View">&#xe8f4;</i></a>
 							<a href="{{route('posts.edit',$post)}}" class="edit" ><i class="material-icons" title="Edit">&#xE254;</i></a>
 							<form action="{{route('posts.destroy',$post)}}" method="POST">
 							@csrf
