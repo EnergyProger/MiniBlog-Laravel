@@ -28,7 +28,7 @@
 				<tbody>
 					@foreach($posts as $post)
 					<tr>
-						<td><img style="width: 100px;" src="{{asset('storage/assets/img_posts/'.$post->img)}}" alt=""></td>
+						<td><img style="width: 100px;" src="{{asset('assets/images/'.$post->img)}}" alt=""></td>
 						<td>{{$post->title}}</td>
 						<td>{{$post->description}}</td>
 						<td>{{$post->updated_at}}</td>

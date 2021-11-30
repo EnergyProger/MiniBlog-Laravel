@@ -25,7 +25,7 @@
   <div class="form-group">
     <label for="img">Old image</label>
     <input type="hidden" name="oldImage" value="{{$post->img}}">
-    <img class="imageForm" src="{{asset('storage/assets/img_posts/'.$post->img)}}" alt="">
+    <img class="imageForm" src="{{asset('assets/images/'.$post->img)}}" alt="">
   </div>
 
   <div class="form-group">

@@ -3,7 +3,7 @@
 @section('content')
 <div class="showPage">
     <div class="showPage__image">
-        <img src="{{asset('storage/assets/img_posts/'.$post->img)}}" alt="">
+        <img src="{{asset('assets/images/'.$post->img)}}" alt="">
     </div>
     <div class="showPage__content">
         <h2>{{$post->title}}</h2>

@@ -16,9 +16,9 @@ class Post extends Model
 
     public function saveImage(UploadedFile $image)
     {
-         $destination_path = "public/assets/img_posts";
+        
          $image_name = $image->getClientOriginalName();
-         $image->storeAs($destination_path,$image_name);
+         $image->move(public_path('assets/images'),$image_name);
 
          return $image_name;
     }
