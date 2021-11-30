@@ -40,6 +40,7 @@ class PostController extends Controller
     public function store(StoreFormRequest $request)
     {
         $post = new Post();
+        
         $input = $request->validated();
         
         $input['img'] = $post->saveImage($request->file('img'));
