@@ -8,6 +8,7 @@
     <div class="showPage__content">
         <h2>{{$post->title}}</h2>
         <p>{{$post->updated_at}}</p>
+        <h5>Category: {{$post->categories['title']}}</h5>
         <p class="text">{{$post->description}}</p>
     </div>
 </div>

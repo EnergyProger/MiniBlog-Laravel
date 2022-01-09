@@ -26,6 +26,7 @@ class UpdateFormRequest extends FormRequest
         return [
             'title'=>'required|max:255',
             'description'=>'required',
+            'category_id'=>'required',
             'img' => 'mimes:jpeg,jpg,png,gif'
         ];
     }

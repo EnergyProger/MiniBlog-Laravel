@@ -20,6 +20,7 @@
 					<tr>
 						<th>Image</th>
 						<th>Title</th>
+						<th>Category</th>
 						<th>Description</th>
 						<th>Published</th>
 						<th>Actions</th>
@@ -30,6 +31,7 @@
 					<tr>
 						<td><img style="width: 100px;" src="{{asset('assets/images/'.$post->img)}}" alt=""></td>
 						<td>{{$post->title}}</td>
+						<td>{{$post->categories['title']}}</td>
 						<td>{{$post->description}}</td>
 						<td>{{$post->updated_at}}</td>
 						<td>
