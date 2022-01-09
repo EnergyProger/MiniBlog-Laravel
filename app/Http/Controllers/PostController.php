@@ -3,11 +3,13 @@
 namespace App\Http\Controllers;
 
 use App\Models\Post;
+use App\Models\Category;
 use Illuminate\Http\Request;
 use App\Http\Requests\StoreFormRequest;
 use App\Http\Requests\UpdateFormRequest;
+use App\Http\Controllers\PostBaseController;
 
-class PostController extends Controller
+class PostController extends PostBaseController
 {
     /**
      * Display a listing of the resource.
@@ -28,7 +30,8 @@ class PostController extends Controller
      */
     public function create()
     {
-        return view('post.create');
+        $categories = Category::all();
+        return view('post.create', compact('categories'));
     }
 
     /**
@@ -39,11 +42,10 @@ class PostController extends Controller
      */
     public function store(StoreFormRequest $request)
     {
-        $post = new Post();
         
         $input = $request->validated();
         
-        $input['img'] = $post->saveImage($request->file('img'));
+        $input['img'] = $this->service->saveImage($request->file('img'));
         
 
        Post::create($input);
@@ -70,7 +72,8 @@ class PostController extends Controller
      */
     public function edit(Post $post)
     {
-        return view('post.edit',compact('post'));
+        $categories = Category::all();
+        return view('post.edit',compact('post','categories'));
     }
 
     /**

@@ -15,6 +15,25 @@
   @enderror
 
   <div class="form-group">
+    <div>
+      <label for="category_id">Category</label>
+    </div>
+    <select name="category_id">
+        @foreach($categories as $category)
+          @if($category->id == $post->category_id)
+            <option value="{{$category->id}}" selected>{{$category->title}}</option>
+          @else
+            <option value="{{$category->id}}">{{$category->title}}</option>
+          @endif
+        
+        @endforeach
+    </select>
+  </div>
+  @error('category_id')
+   <span class="text-danger-message">{{$message}}</span>
+  @enderror
+
+  <div class="form-group">
     <label for="description">Description</label>
     <input type="text" class="form-control" id="description" name="description" value="{{$post->description}}">
   </div>

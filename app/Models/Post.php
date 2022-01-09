@@ -2,6 +2,7 @@
 
 namespace App\Models;
 
+use App\Models\Category;
 use Illuminate\Http\UploadedFile;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
@@ -12,14 +13,10 @@ class Post extends Model
 
     protected $table = 'posts';
 
-    protected $fillable = ['title','description','img','updated_at'];
+    protected $fillable = ['title','description','img','updated_at','category_id'];
 
-    public function saveImage(UploadedFile $image)
+    public function categories()
     {
-        
-         $image_name = $image->getClientOriginalName();
-         $image->move(public_path('assets/images'),$image_name);
-
-         return $image_name;
+        return $this->belongsTo(Category::class,'category_id','id');
     }
 }

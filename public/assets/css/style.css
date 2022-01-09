@@ -277,3 +277,7 @@ table.table .avatar {
 	color: #000;
 	font-size: 16px;
 }
+.showPage__content h5{
+	margin-left: 30px;
+	color: rgb(148, 13, 13);
+}
